@@ -13,11 +13,13 @@ export function VideoEmbedInnerWeb({
   active,
   setActive,
   onScreen,
+  lastKnownTime,
 }: {
   embed: AppBskyEmbedVideo.View
   active: boolean
   setActive: () => void
   onScreen: boolean
+  lastKnownTime: React.MutableRefObject<number | undefined>
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -29,7 +31,7 @@ export function VideoEmbedInnerWeb({
   // send error up to error boundary
   const [error, setError] = useState<Error | null>(null)
   if (error) {
-    throw error
+    throw errorlastKnownTime: React.MutableRefObject<number | undefined
   }
 
   const hlsRef = useHLS({
